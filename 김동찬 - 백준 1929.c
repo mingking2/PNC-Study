@@ -4,8 +4,7 @@ int main(void){
 	scanf_s("%d %d", &n, &m);
 	for (n; n <= m; n++)
 	{
-		if (n ==2)printf("2\n");
-		if (n % 2 != 0 && n!=1) 
+		if (n % 2 != 0 && n!=1 || n==2) // 2를 제외한 2의 배수와 1은 소수가 아님
 		{
 			int i = 2;
 			while (i <= n) {

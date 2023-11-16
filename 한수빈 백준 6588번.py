@@ -19,5 +19,5 @@ while True:
         q=q-1 
     if n==0:
         break
-    #6=3+3같은 상황...
+    
    

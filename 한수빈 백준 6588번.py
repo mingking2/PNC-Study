@@ -17,5 +17,10 @@ while True:
             break
         p=p+1
         q=q-1
+        elif n==a[p]+a[p]:
+            print(n, "=", a[p], "+", a[p] ) 
+        elif n==a[q]+a[q]:
+            print(n, "=", a[q], "+", a[q] )  
     if n==0:
         break
+   

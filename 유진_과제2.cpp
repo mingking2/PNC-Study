@@ -3,8 +3,8 @@ using namespace std;
 
 int main() {
   int number;
-  int list[100] = {0}; //소수 넣어둘 배열
-  int array[100][2]; //합한 거 넣어둘 배열
+  int list[100000] = {0}; //소수 넣어둘 배열
+  int array[100000][2]; //합한 거 넣어둘 배열
   while(1){
     cout << "4 이상의 짝수를 입력하세요(0을 입력하면 종료): ";
     cin >> number;

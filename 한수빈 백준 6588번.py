@@ -16,11 +16,8 @@ while True:
             print(n, "=", a[p], "+", a[q] )
             break
         p=p+1
-        q=q-1
-        elif n==a[p]+a[p]:
-            print(n, "=", a[p], "+", a[p] ) 
-        elif n==a[q]+a[q]:
-            print(n, "=", a[q], "+", a[q] )  
+        q=q-1 
     if n==0:
         break
+    #6=3+3같은 상황...
    

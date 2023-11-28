@@ -1,37 +1,34 @@
 #include<stdio.h>
-int arr[1000000] = { 0 };
-int max_arr[1000000] = { 0 };
-int main(void) {
-	int count = 0; // test case 개수 체크용 
-	while (1) {
-		int n, max = 0, m = 3;
-		scanf_s("%d", &n);
-		if (n == 0) {
-			for (int k = 0; k <= count-1; k++) // 0은 출력하지 않기위함 
-			{
-				if (max_arr[k] == arr[k] - max_arr[k]) printf("Goldbach's conjecture is wrong.\n"); // 같은 수로 나올경우 제외함
-				else {
-					printf("%d = %d + %d\n", arr[k], arr[k] - max_arr[k], max_arr[k]);
-				}
-			}
-			break;
-		}
-		for (m; m <= n; m++) // n까지의 소수 판별 하기위한 반복문
+#include<stdlib.h>
+int pn_arr[1000000] = { 0, };
+int PN()
+{
+	for (int j = 2; j * j <= 1000000; j++)
+	{
+		for (int k = j * j; k <= 1000000; k += j)
 		{
-			if (m % 2 != 0)
-			{
-				int i = 2;
-				while (i <= m) {
-					if (i == m) {
-						if (max < m && n - m != 1) max = m; // 8,12,14등 n과 max의 차가 1이면 max에서 제외함
-					}
-					if (m % i == 0) break;
-					i++;
-				}
-			}	
+			pn_arr[k] = 1;
 		}
-		max_arr[count] = max;
-		arr[count] = n;
-		count += 1;
+	}
+	pn_arr[1] = 1; //1은 소수가 아님
+	return 0;
+}
+int main(void) {
+	PN();
+	while (1) {
+		int m, max = 0;
+		scanf_s("%d", &m);
+
+		if (m == 0) break;
+
+		for (int i = 3; i <= m; i++) {
+			if(m-i<=0) printf("Goldbach's conjecture is wrong.\n");
+			else if (pn_arr[m - i] == 0 && pn_arr[i] == 0) 
+			{
+				printf("%d = %d + %d\n", m, i, m - i);
+				break;
+			}
+		}
+		
 	}
 }

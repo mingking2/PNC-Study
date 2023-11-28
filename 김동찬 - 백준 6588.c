@@ -22,7 +22,10 @@ int main(void) {
 		if (m == 0) break;
 
 		for (int i = 3; i <= m; i++) {
-			if(m-i<=0) printf("Goldbach's conjecture is wrong.\n");
+			if (m - i <= 0) { 
+				printf("Goldbach's conjecture is wrong.\n"); 
+				break;
+			}
 			else if (pn_arr[m - i] == 0 && pn_arr[i] == 0) 
 			{
 				printf("%d = %d + %d\n", m, i, m - i);

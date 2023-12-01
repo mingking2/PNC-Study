@@ -14,17 +14,17 @@ while True:
     while p<=q:
         if n == a[p]+a[q]:
             print(n, "=", a[p], "+", a[q] ) 
-            break;
+            break
         else:
             q=q-1
             if n == a[p]+a[q]:
                 print(n, "=", a[p], "+", a[q] ) 
-                break;
+                break
             else:
                 p=p+1
                 if n == a[p]+a[q]:
                     print(n, "=", a[p], "+", a[q] ) 
-                    break;
+                    break
     if n==0:
         break
 

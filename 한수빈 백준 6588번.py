@@ -1,22 +1,30 @@
+n=1000000
+seive=[False,False]+[True]*(n-1)
 a=[]
-for c in range(2,1000001):
-    if c==2:
-        a.append(2)
-    for d in range(1,c-1):
-        if c % d == 0:
-            break
-    else:
-        a.append(c) #리스트 1000,000개 만들었음
+for i in range(2,n+1):
+    if seive[i]:
+        a.append(i)
+    for j in range(i*2,n+1,i):
+        seive[j]=False #1,000,000보다 작은 소수 리스트 a 만들었음
+        
 p=0
-q=len[a]
+q=len(a)-1
 while True:
     n=int(input())
-    for f in range(len(a/2)):
-        if n == a[p] + a[q]:
-            print(n, "=", a[p], "+", a[q] )
-            break
-        p=p+1
-        q=q-1 
+    while p<=q:
+        if n == a[p]+a[q]:
+            print(n, "=", a[p], "+", a[q] ) 
+            break;
+        else:
+            q=q-1
+            if n == a[p]+a[q]:
+                print(n, "=", a[p], "+", a[q] ) 
+                break;
+            else:
+                p=p+1
+                if n == a[p]+a[q]:
+                    print(n, "=", a[p], "+", a[q] ) 
+                    break;
     if n==0:
         break
     

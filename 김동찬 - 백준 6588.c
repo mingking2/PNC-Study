@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 int pn_arr[1000000] = { 0, };
 int PN()
 {
@@ -10,28 +9,25 @@ int PN()
 			pn_arr[k] = 1;
 		}
 	}
-	pn_arr[1] = 1; //1은 소수가 아님
 	return 0;
 }
 int main(void) {
 	PN();
 	while (1) {
-		int m, max = 0;
-		scanf_s("%d", &m);
+		int m;
+		scanf("%d", &m);
 
 		if (m == 0) break;
 
 		for (int i = 3; i <= m; i++) {
-			if (m - i <= 0) { 
+            if (m - i <= 0) { 
 				printf("Goldbach's conjecture is wrong.\n"); 
 				break;
 			}
-			else if (pn_arr[m - i] == 0 && pn_arr[i] == 0) 
-			{
+			else if (pn_arr[m - i] == 0 && pn_arr[i] == 0) {
 				printf("%d = %d + %d\n", m, i, m - i);
 				break;
 			}
 		}
-		
 	}
 }
